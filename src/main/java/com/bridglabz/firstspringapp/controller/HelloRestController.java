@@ -1,13 +1,15 @@
 package com.bridglabz.firstspringapp.controller;
 
+import com.bridglabz.firstspringapp.model.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/hello")
 public class HelloRestController {
-    @GetMapping("/p/{name}")
-    public String sayHelloParam(@PathVariable String name){
-        return "Hello "+name+ " From BridgeLabz"+"!";
+    @PostMapping("/post")
+    public String sayHelllo(@RequestBody User user)
+    {
+        return "Hello  "+user.getfName()+" "+user.getlName()+" !";
     }
 
 
