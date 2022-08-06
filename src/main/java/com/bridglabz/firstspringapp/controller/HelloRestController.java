@@ -6,10 +6,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/hello")
 public class HelloRestController {
-    @PostMapping("/post")
-    public String sayHelllo(@RequestBody User user)
-    {
-        return "Hello  "+user.getfName()+" "+user.getlName()+" !";
+    @PutMapping("/put/{fName}")
+    public String sayHello(@PathVariable String fName,@RequestParam(value = "lName") String lName){
+        return "Hello  "+fName+" "+lName+" !";
     }
 
 
